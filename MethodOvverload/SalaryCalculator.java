@@ -1,8 +1,8 @@
 package MethodOvverload;
 
 public class SalaryCalculator {
-    public static final int level1 = 150000;
-    public static final int level2 = 2000000;
+    public final int level1 = 150000;
+    public final int level2 = 2000000;
 
     public double calculator(int grosSalary) {
         double tax;
@@ -13,29 +13,30 @@ public class SalaryCalculator {
         } else {
             tax = 552500 + (grosSalary - level2) * 36 / 100;
         }
-        double socialFee = grosSalary * 2.5 / 100;
-        if (socialFee > 12500) {
-            socialFee = 12500;
-        }
-        double finalSalary = grosSalary - tax - socialFee - 1000;
-        return finalSalary;
+        double socialFee = socTax(grosSalary);
+        return grosSalary - tax - socialFee - 1000;
+
 
     }
 
-    public double calculator(int grosSalary, boolean privilege){
-        double tax = grosSalary * 10 /100;
+    public double socTax(double grosSalary) {
         double socialFee = grosSalary * 2.5 / 100;
         if (socialFee > 12500) {
             socialFee = 12500;
         }
-        double finalSalary = grosSalary - tax - socialFee - 1000;
-        return finalSalary;
+        return socialFee;
+    }
+
+    public double calculator(int grosSalary, boolean privilege) {
+        double tax = grosSalary * 10 / 100;
+        double socialFee = socTax(grosSalary);
+        return grosSalary - tax - socialFee - 1000;
     }
 
 
     public static void main(String[] args) {
         SalaryCalculator salary = new SalaryCalculator();
-        //System.out.println(salary.calculator(2500000));
-        System.out.println(salary.calculator(800000,true));
+        System.out.println(salary.calculator(300000));
+        //System.out.println(salary.calculator(300000, true));
     }
 }

@@ -30,9 +30,6 @@ public class XOR {
     }
 
     public static boolean xor(boolean x, boolean y) {
-        if (x && y || !x && !y) {
-            return false;
-        } else
-            return true;
+        return (!x || !y) && (x || y);
     }
 }

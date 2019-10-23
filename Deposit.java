@@ -9,7 +9,7 @@ public class Deposit {
         return initialAmount + plusAmount;
     }
 
-    public static void main(Lesson args[]) {
+    public static void main(Lesson[] args) {
 
         finalAmount(100, 16, 12);
 
