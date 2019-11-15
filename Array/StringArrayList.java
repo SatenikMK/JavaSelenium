@@ -2,6 +2,7 @@ package Array;
 
 public class StringArrayList {
 
+
     public StringArrayList(String[] list) {
         this.list = list;
     }
@@ -20,7 +21,6 @@ public class StringArrayList {
         }
         newlist[newlist.length - 1] = item;
         list = newlist;
-
     }
 
     public void delete(int index) {
@@ -39,6 +39,23 @@ public class StringArrayList {
         }
         list = newFood;
     }
+
+    /*public void delete(String item){
+        int newArrayLength = list.length - 1;
+        String [] newFood = new String[newArrayLength];
+        int j = 0;
+        for (int i = 0; i < list.length; ++i) {
+            if (list[i] != item) {
+                newFood[j] = list[i];
+                j++;
+            } else {
+                newFood[j] = list[i + 1];
+                i++;
+                j++;
+            }
+        }
+        list = newFood;
+    }*/
 
 
     public void insertItem(int index, String item) {
@@ -87,6 +104,13 @@ public class StringArrayList {
         for (int i = 0; i < arrayList.getList().length; ++i) {
             System.out.println(arrayList.getList()[i]);
         }
+
+        /*System.out.println("*******************Delete wit item");
+        arrayList.delete("milk");
+
+        for (int i = 0; i<arrayList.getList().length; ++i){
+            System.out.println(arrayList.getList()[i]);
+        }*/
 
 
     }
