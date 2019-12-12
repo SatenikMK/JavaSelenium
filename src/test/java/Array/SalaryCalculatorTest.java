@@ -4,7 +4,7 @@ import org.testng.annotations.*;
 
 import static org.testng.Assert.assertEquals;
 
-public class SalaryCalculatorTest {
+public class SalaryCalculatorTest  {
     SalaryCalculator tetsObject;
 
     @BeforeClass
